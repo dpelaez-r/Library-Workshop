@@ -1,9 +1,11 @@
-#ifndef Biblioteca.h
-#define Biblioteca.h
+#ifndef Biblioteca_h
+#define Biblioteca_h
 #include <iostream>
 #include <fstream>
 #include <string>
-
+#include <iomanip>
+#include <fstream>
+#include <cstdlib>
 
 using namespace std;
 class Libro {
@@ -50,8 +52,21 @@ public:
 
 	void setReserved(int);
 	int getReserved() const;
+
+	void searchBook(int);
+	void deleteBook(int);
+	void updateBook(int);
+	friend ostream& operator<<(ostream&, const Libro&);
 };
 
-#endif // !Biblioteca.h
+enum class Choice { PRINT = 1, UPDATE, NEW, DELETE, END };
 
+Choice enterChoice();
+void createTextFile(fstream&);
+void updateRecord(fstream&);
+void newRecord(fstream&);
+void deleteRecord(fstream&);
+void outputLine(ostream&, const Libro&);
+int getId(const char* const);
 
+#endif // !Biblioteca_h
