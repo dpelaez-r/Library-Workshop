@@ -178,7 +178,7 @@ void updateRecord(fstream& updateFile) {
                 if (book.getId() != 0) {
                     outputLine(cout, book); // display the record
                     // request user to specify amount
-                    cout << "\nEnter the amount of books you want to borrow: ";
+                    cout << "\nEnter the amount of books you want to reserve: ";
                     int amount; // amount of books
                     cin >> amount;
                     
