@@ -52,21 +52,20 @@ public:
 
 	void setReserved(int);
 	int getReserved() const;
-
-	void searchBook(int);
-	void deleteBook(int);
-	void updateBook(int);
 	friend ostream& operator<<(ostream&, const Libro&);
 };
 
-enum class Choice { PRINT = 1, UPDATE, NEW, DELETE, END };
+enum class Choice { PRINT = 1, UPDATE = 2, NEW = 3, DELETE = 4, SEARCH = 5, END = 6};
 
 Choice enterChoice();
 void createTextFile(fstream&);
 void updateRecord(fstream&);
 void newRecord(fstream&);
 void deleteRecord(fstream&);
+void searchBook(fstream&);
 void outputLine(ostream&, const Libro&);
 int getId(const char* const);
 
+
 #endif // !Biblioteca_h
+
